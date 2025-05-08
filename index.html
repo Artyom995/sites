@@ -55,6 +55,93 @@
             color: #000000;
             background: #ffffff;
         }
+        /* Стили для модального окна портфолио */
+        .portfolio-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .portfolio-modal-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            text-align: left;
+        }
+        .portfolio-modal-content h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4b0082;
+            margin-bottom: 1rem;
+        }
+        .portfolio-modal-content p {
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        .portfolio-modal-content ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .portfolio-modal-content .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #6b7280;
+            color: white;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .portfolio-modal-content .close-modal:hover {
+            background: #4b5563;
+        }
+        /* Стили для карусели */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .carousel-btn.prev {
+            left: 0.5rem;
+        }
+        .carousel-btn.next {
+            right: 0.5rem;
+        }
     </style>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdWiTIrAAAAAPkNKl2venguhorkTxGPAhJJKR9x"></script>
 </head>
@@ -71,9 +158,7 @@
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#" class="menu-link">Главная</a>
-                    <a href="#" class="menu-link">О нас</a>
                     <a href="#" class="menu-link">Услуги</a>
-                    <a href="#" class="menu-link">Портфолио</a>
                     <a href="#" class="menu-link">Контакты</a>
                 </div>
                 <div class="md:hidden">
@@ -85,9 +170,7 @@
             <div id="mobile-menu" class="mobile-menu md:hidden px-4 pb-4">
                 <div class="flex flex-col space-y-3">
                     <a href="#" class="block py-2 hover:bg-white hover:bg-opacity-10 rounded px-3">Главная</a>
-                    <a href="#" class="block py-2 hover:bg-white hover:bg-opacity-10 rounded px-3">О нас</a>
                     <a href="#" class="block py-2 hover:bg-white hover:bg-opacity-10 rounded px-3">Услуги</a>
-                    <a href="#" class="block py-2 hover:bg-white hover:bg-opacity-10 rounded px-3">Портфолио</a>
                     <a href="#" class="block py-2 hover:bg-white hover:bg-opacity-10 rounded px-3">Контакты</a>
                 </div>
             </div>
@@ -102,7 +185,7 @@
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Создам уникальные цифровые решения</h1>
                     <p class="text-xl mb-8 opacity-90">Я разрабатываю современные веб-приложения и сайты, которые выделяют ваш бизнес среди конкурентов.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#" class="bg-white text-purple-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-center transition duration-300">Начать проект</a>
+                        <a href="#" class="bg-white text-purple-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-center transition duration-300">Реализовать идею</a>
                         <a href="#" class="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 font-bold py-3 px-8 rounded-full text-center transition duration-300">Узнать больше</a>
                     </div>
                 </div>
@@ -159,7 +242,7 @@
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
                         <h3 class="text-white text-xl font-bold mb-2">Корпоративный сайт</h3>
                         <p class="text-white text-center mb-4">Современный дизайн с адаптивной версткой под все устройства</p>
-                        <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition">Подробнее</a>
+                        <button data-modal="modal-project-1" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-xl shadow-lg card-hover">
@@ -167,7 +250,7 @@
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
                         <h3 class="text-white text-xl font-bold mb-2">Интернет-магазин</h3>
                         <p class="text-white text-center mb-4">Полнофункциональный магазин с системой оплаты и каталогом</p>
-                        <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition">Подробнее</a>
+                        <button data-modal="modal-project-2" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-xl shadow-lg card-hover">
@@ -175,7 +258,7 @@
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
                         <h3 class="text-white text-xl font-bold mb-2">Мобильное приложение</h3>
                         <p class="text-white text-center mb-4">Кроссплатформенное приложение для iOS и Android</p>
-                        <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition">Подробнее</a>
+                        <button data-modal="modal-project-3" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
                     </div>
                 </div>
             </div>
@@ -349,9 +432,7 @@
                     <h4 class="text-lg font-bold mb-4">Навигация</h4>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Главная</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">О нас</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Услуги</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Портфолио</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Контакты</a></li>
                     </ul>
                 </div>
@@ -385,12 +466,89 @@
         </div>
     </footer>
 
-    <!-- Модальное окно -->
+    <!-- Модальное окно для формы -->
     <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
         <div class="bg-white p-6 rounded-lg text-center">
             <h3 class="text-xl font-bold mb-4">Сообщение отправлено!</h3>
             <p class="text-gray-600 mb-6">Спасибо за ваш запрос. Я свяжусь с вами в ближайшее время.</p>
             <button id="close-modal" class="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Модальные окна для портфолио с каруселью -->
+    <div id="modal-project-1" class="portfolio-modal">
+        <div class="portfolio-modal-content">
+            <span class="close-modal">×</span>
+            <h3>Корпоративный сайт</h3>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1 Image 1">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1 Image 2">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Project 1 Image 3">
+                </div>
+                <button class="carousel-btn prev">❮</button>
+                <button class="carousel-btn next">❯</button>
+            </div>
+            <p>Разработан современный корпоративный сайт для компании в сфере технологий. Целью было создание удобного и визуально привлекательного интерфейса для представления услуг компании.</p>
+            <p><strong>Технологии:</strong></p>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Tailwind CSS</li>
+                <li>React</li>
+            </ul>
+            <p><strong>Срок реализации:</strong> 4 недели</p>
+            <p><strong>Результаты:</strong> Увеличение времени пребывания на сайте на 30%, рост заявок на услуги на 25%.</p>
+            <p><a href="#" class="text-purple-600 hover:underline">Посмотреть проект</a></p>
+        </div>
+    </div>
+    <div id="modal-project-2" class="portfolio-modal">
+        <div class="portfolio-modal-content">
+            <span class="close-modal">×</span>
+            <h3>Интернет-магазин</h3>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Project 2 Image 1">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 2 Image 2">
+                    <img src="https://images.unsplash.com/photo-1556742524-750f2ab949fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 2 Image 3">
+                </div>
+                <button class="carousel-btn prev">❮</button>
+                <button class="carousel-btn next">❯</button>
+            </div>
+            <p>Создан полнофункциональный интернет-магазин для продажи товаров в сфере моды. Включены каталог, корзина, интеграция с платежной системой и админ-панель.</p>
+            <p><strong>Технологии:</strong></p>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React, Redux</li>
+                <li>Node.js, MongoDB</li>
+            </ul>
+            <p><strong>Срок реализации:</strong> 6 недель</p>
+            <p><strong>Результаты:</strong> Рост продаж на 40%, улучшение UX благодаря быстрой загрузке страниц.</p>
+            <p><a href="#" class="text-purple-600 hover:underline">Посмотреть проект</a></p>
+        </div>
+    </div>
+    <div id="modal-project-3" class="portfolio-modal">
+        <div class="portfolio-modal-content">
+            <span class="close-modal">×</span>
+            <h3>Мобильное приложение</h3>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1436&q=80" alt="Project 3 Image 1">
+                    <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3 Image 2">
+                    <img src="https://images.unsplash.com/photo-1593642634443-44adaa14823d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3 Image 3">
+                </div>
+                <button class="carousel-btn prev">❮</button>
+                <button class="carousel-btn next">❯</button>
+            </div>
+            <p>Разработано кроссплатформенное мобильное приложение для доставки еды, работающее на iOS и Android. Включены функции заказа, отслеживания доставки и push-уведомлений.</p>
+            <p><strong>Технологии:</strong></p>
+            <ul>
+                <li>React Native</li>
+                <li>Firebase</li>
+                <li>REST API</li>
+            </ul>
+            <p><strong>Срок реализации:</strong> 8 недель</p>
+            <p><strong>Результаты:</strong> Более 10,000 загрузок в первые 3 месяца, высокий рейтинг в магазинах приложений.</p>
+            <p><a href="#" class="text-purple-600 hover:underline">Посмотреть проект</a></p>
         </div>
     </div>
 
@@ -469,9 +627,64 @@
             });
         });
 
-        // Закрытие модального окна
+        // Закрытие модального окна формы
         document.getElementById('close-modal').addEventListener('click', function() {
             document.getElementById('modal').classList.add('hidden');
+        });
+
+        // Обработка модальных окон портфолио
+        const modalButtons = document.querySelectorAll('.portfolio-modal-btn');
+        const modals = document.querySelectorAll('.portfolio-modal');
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+
+        modalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.style.display = 'flex';
+                } else {
+                    console.error(`Модальное окно с id ${modalId} не найдено`);
+                }
+            });
+        });
+
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.portfolio-modal');
+                modal.style.display = 'none';
+            });
+        });
+
+        // Закрытие модального окна при клике вне контента
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Карусель изображений
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach(carousel => {
+            const imagesContainer = carousel.querySelector('.carousel-images');
+            const images = imagesContainer.querySelectorAll('img');
+            let currentIndex = 0;
+
+            const showImage = (index) => {
+                imagesContainer.style.transform = `translateX(-${index * 100}%)`;
+            };
+
+            carousel.querySelector('.prev').addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                showImage(currentIndex);
+            });
+
+            carousel.querySelector('.next').addEventListener('click', () => {
+                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                showImage(currentIndex);
+            });
         });
     </script>
 </body>

@@ -49,16 +49,14 @@
             max-height: 500px;
         }
         select#site-type {
-            color: #ffffff; /* Белый цвет для текста выбранного элемента */
+            color: #ffffff;
         }
-
         select#site-type option {
-            color: #000000; /* Черный цвет для текста опций в выпадающем меню */
-            background: #ffffff; /* Белый фон для опций */
+            color: #000000;
+            background: #ffffff;
         }
     </style>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdWiTIrAAAAAPkNKl2venguhorkTxGPAhJJKR9x"></script>
-
 </head>
 <body class="font-sans antialiased text-gray-800">
     <!-- Навигация -->
@@ -71,8 +69,6 @@
                         <span>Brand</span>
                     </a>
                 </div>
-                
-                <!-- Десктоп меню -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#" class="menu-link">Главная</a>
                     <a href="#" class="menu-link">О нас</a>
@@ -80,16 +76,12 @@
                     <a href="#" class="menu-link">Портфолио</a>
                     <a href="#" class="menu-link">Контакты</a>
                 </div>
-                
-                <!-- Мобильное меню кнопка -->
                 <div class="md:hidden">
                     <button id="menu-btn" class="text-white focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
-            
-            <!-- Мобильное меню -->
             <div id="mobile-menu" class="mobile-menu md:hidden px-4 pb-4">
                 <div class="flex flex-col space-y-3">
                     <a href="#" class="block py-2 hover:bg-white hover:bg-opacity-10 rounded px-3">Главная</a>
@@ -128,7 +120,6 @@
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Почему выбирают меня</h2>
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-gray-50 p-8 rounded-xl card-hover">
                     <div class="text-purple-600 text-4xl mb-4">
@@ -137,7 +128,6 @@
                     <h3 class="text-xl font-bold mb-3">Быстрота</h3>
                     <p class="text-gray-600">Я использую современные технологии для быстрой разработки без потери качества.</p>
                 </div>
-                
                 <div class="bg-gray-50 p-8 rounded-xl card-hover">
                     <div class="text-purple-600 text-4xl mb-4">
                         <i class="fas fa-mobile-screen"></i>
@@ -145,7 +135,6 @@
                     <h3 class="text-xl font-bold mb-3">Адаптивность</h3>
                     <p class="text-gray-600">Все мои проекты идеально работают на любых устройствах и размерах экранов.</p>
                 </div>
-                
                 <div class="bg-gray-50 p-8 rounded-xl card-hover">
                     <div class="text-purple-600 text-4xl mb-4">
                         <i class="fas fa-chart-line"></i>
@@ -164,9 +153,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Мои работы</h2>
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Проект 1 -->
                 <div class="relative group overflow-hidden rounded-xl shadow-lg card-hover">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
@@ -175,8 +162,6 @@
                         <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition">Подробнее</a>
                     </div>
                 </div>
-                
-                <!-- Проект 2 -->
                 <div class="relative group overflow-hidden rounded-xl shadow-lg card-hover">
                     <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Project 2" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
@@ -185,8 +170,6 @@
                         <a href="#" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition">Подробнее</a>
                     </div>
                 </div>
-                
-                <!-- Проект 3 -->
                 <div class="relative group overflow-hidden rounded-xl shadow-lg card-hover">
                     <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1436&q=80" alt="Project 3" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
@@ -196,7 +179,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="text-center mt-12">
                 <a href="#" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Смотреть все работы</a>
             </div>
@@ -210,9 +192,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Что говорят клиенты</h2>
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Отзыв 1 -->
                 <div class="bg-gray-50 p-8 rounded-xl shadow-sm card-hover">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 text-xl mr-2">
@@ -232,8 +212,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Отзыв 2 -->
                 <div class="bg-gray-50 p-8 rounded-xl shadow-sm card-hover">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 text-xl mr-2">
@@ -253,8 +231,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Отзыв 3 -->
                 <div class="bg-gray-50 p-8 rounded-xl shadow-sm card-hover">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 text-xl mr-2">
@@ -285,10 +261,7 @@
                 <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">Свяжитесь со мной</h2>
                     <p class="text-lg mb-8 opacity-90">Готовы начать проект или есть вопросы? Напишите мне, и я свяжусь с вами в ближайшее время.</p>
-                    
                     <div class="space-y-6">
-
-                        
                         <div class="flex items-start">
                             <div class="text-xl mr-4 mt-1">
                                 <i class="fas fa-phone-alt"></i>
@@ -298,18 +271,16 @@
                                 <p>+7 (922) 006-42-33</p>
                             </div>
                         </div>
-                        
                         <div class="flex items-start">
                             <div class="text-xl mr-4 mt-1">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold mb-1">telegram</h4>
+                                <h4 class="font-bold mb-1">Telegram</h4>
                                 <p><a href="https://t.me/ArtyomVadimovich">@ArtyomVadimovich</a></p>
                             </div>
                         </div>
                     </div>
-                    
                     <div class="mt-10 flex space-x-4">
                         <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
                             <i class="fab fa-facebook-f"></i>
@@ -325,14 +296,12 @@
                         </a>
                     </div>
                 </div>
-                
                 <div class="lg:w-1/2">
-                    <form class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 md:p-8">
+                    <form id="signup-form" class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 md:p-8">
                         <div class="mb-6">
                             <label for="name" class="block mb-2">Ваше имя</label>
                             <input type="text" id="name" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg py-3 px-4 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
                         </div>
-                        
                         <div class="mb-6">
                             <label for="site-type" class="block mb-2">Тип сайта</label>
                             <select id="site-type" name="site-type" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
@@ -343,12 +312,10 @@
                                 <option value="other">Другое</option>
                             </select>
                         </div>
-                        
                         <div class="mb-6">
                             <label for="phone" class="block mb-2">Телефон</label>
                             <input type="tel" id="phone" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg py-3 px-4 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
                         </div>
-                        
                         <div class="mb-6">
                             <label for="message" class="block mb-2">Сообщение</label>
                             <textarea id="message" rows="4" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg py-3 px-4 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"></textarea>
@@ -378,7 +345,6 @@
                     </h3>
                     <p class="text-gray-400">Создаем цифровые решения для роста вашего бизнеса.</p>
                 </div>
-                
                 <div>
                     <h4 class="text-lg font-bold mb-4">Навигация</h4>
                     <ul class="space-y-2">
@@ -389,7 +355,6 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Контакты</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h4 class="text-lg font-bold mb-4">Услуги</h4>
                     <ul class="space-y-2">
@@ -399,7 +364,6 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Техническая поддержка</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h4 class="text-lg font-bold mb-4">Подписаться</h4>
                     <p class="text-gray-400 mb-4">Будьте в курсе наших новостей и акций.</p>
@@ -411,7 +375,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 mb-4 md:mb-0">© 2025 Brand. Все права защищены.</p>
                 <div class="flex space-x-6">
@@ -422,75 +385,73 @@
         </div>
     </footer>
 
+    <!-- Модальное окно -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg text-center">
+            <h3 class="text-xl font-bold mb-4">Сообщение отправлено!</h3>
+            <p class="text-gray-600 mb-6">Спасибо за ваш запрос. Я свяжусь с вами в ближайшее время.</p>
+            <button id="close-modal" class="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition">Закрыть</button>
+        </div>
+    </div>
+
     <script>
         // Мобильное меню
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('open');
         });
-        
+
         // Плавная прокрутка для якорных ссылок
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // Закрываем мобильное меню если оно открыто
                     if (mobileMenu.classList.contains('open')) {
                         mobileMenu.classList.remove('open');
                     }
                 }
             });
         });
-        
+
         // Анимация при скролле
         const animateOnScroll = () => {
             const elements = document.querySelectorAll('.card-hover, .float-animation');
-            
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
-                
                 if (elementPosition < screenPosition) {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
                 }
             });
         };
-        
-        // Запускаем анимацию при загрузке и скролле
         window.addEventListener('load', animateOnScroll);
         window.addEventListener('scroll', animateOnScroll);
-    </script>
-    <script>
+
+        // Обработка формы
         document.getElementById('signup-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            
             const form = event.target;
             grecaptcha.ready(function() {
                 grecaptcha.execute('6LdWiTIrAAAAAPkNKl2venguhorkTxGPAhJJKR9x', {action: 'submit'}).then(function(token) {
                     form.querySelector('#recaptcha-token').value = token;
-                    
                     const data = {
-                        email: form.querySelector('#email').value,
-                        subject: form.querySelector('#subject').value,
+                        name: form.querySelector('#name').value,
+                        siteType: form.querySelector('#site-type').value,
+                        phone: form.querySelector('#phone').value,
                         message: form.querySelector('#message').value,
-                        agree: form.querySelector('#agree').checked,
+                        agree: form.querySelector('#consent').checked,
                         'recaptcha-token': token
                     };
-                    
-                    fetch('https://script.google.com/macros/s/AKfycbwY-jldDX1wPU0PBdK7BRAtHgI_ggATGMXU3nwyxWCgIrlRg74SAS9mRbN00HINCDNY/exec', {
+                    fetch('https://script.google.com/macros/s/AKfycbxvQLat33v7arony-Oj7mktG1jtUT-oKtJ-v9RUh3uBP_BbSiDXdNJufE6G_TMY_o7Q/exec', {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: {
@@ -506,6 +467,11 @@
                     });
                 });
             });
+        });
+
+        // Закрытие модального окна
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('modal').classList.add('hidden');
         });
     </script>
 </body>

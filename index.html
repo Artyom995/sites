@@ -48,7 +48,17 @@
         .mobile-menu.open {
             max-height: 500px;
         }
+        select#site-type {
+            color: #ffffff; /* Белый цвет для текста выбранного элемента */
+        }
+
+        select#site-type option {
+            color: #000000; /* Черный цвет для текста опций в выпадающем меню */
+            background: #ffffff; /* Белый фон для опций */
+        }
     </style>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdWiTIrAAAAAPkNKl2venguhorkTxGPAhJJKR9x"></script>
+
 </head>
 <body class="font-sans antialiased text-gray-800">
     <!-- Навигация -->
@@ -277,15 +287,7 @@
                     <p class="text-lg mb-8 opacity-90">Готовы начать проект или есть вопросы? Напишите мне, и я свяжусь с вами в ближайшее время.</p>
                     
                     <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="text-xl mr-4 mt-1">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold mb-1">Адрес</h4>
-                                <p>г. Тюмень, ул. Любое название, д. 123, офис 456</p>
-                            </div>
-                        </div>
+
                         
                         <div class="flex items-start">
                             <div class="text-xl mr-4 mt-1">
@@ -332,8 +334,14 @@
                         </div>
                         
                         <div class="mb-6">
-                            <label for="email" class="block mb-2">Email</label>
-                            <input type="email" id="email" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg py-3 px-4 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                            <label for="site-type" class="block mb-2">Тип сайта</label>
+                            <select id="site-type" name="site-type" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                                <option value="" disabled selected>Выберите тип сайта</option>
+                                <option value="one-page">Одностраничный</option>
+                                <option value="multi-page">Многостраничный</option>
+                                <option value="portfolio">Сайт-портфолио</option>
+                                <option value="other">Другое</option>
+                            </select>
                         </div>
                         
                         <div class="mb-6">
@@ -345,7 +353,13 @@
                             <label for="message" class="block mb-2">Сообщение</label>
                             <textarea id="message" rows="4" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg py-3 px-4 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"></textarea>
                         </div>
-                        
+                        <div class="mb-6">
+                            <label class="flex items-center">
+                                <input type="checkbox" id="consent" class="mr-2 h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
+                                <span class="text-sm">Я даю согласие на обработку моих персональных данных в соответствии с <a href="#" class="underline hover:text-purple-300">Политикой конфиденциальности</a></span>
+                            </label>
+                        </div>
+                        <input type="hidden" id="recaptcha-token" name="recaptcha-token">
                         <button type="submit" class="w-full bg-white text-purple-700 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition duration-300">Отправить сообщение</button>
                     </form>
                 </div>
@@ -458,6 +472,41 @@
         // Запускаем анимацию при загрузке и скролле
         window.addEventListener('load', animateOnScroll);
         window.addEventListener('scroll', animateOnScroll);
+    </script>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LdWiTIrAAAAAPkNKl2venguhorkTxGPAhJJKR9x', {action: 'submit'}).then(function(token) {
+                    form.querySelector('#recaptcha-token').value = token;
+                    
+                    const data = {
+                        email: form.querySelector('#email').value,
+                        subject: form.querySelector('#subject').value,
+                        message: form.querySelector('#message').value,
+                        agree: form.querySelector('#agree').checked,
+                        'recaptcha-token': token
+                    };
+                    
+                    fetch('https://script.google.com/macros/s/AKfycbwY-jldDX1wPU0PBdK7BRAtHgI_ggATGMXU3nwyxWCgIrlRg74SAS9mRbN00HINCDNY/exec', {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    }).then(() => {
+                        document.getElementById('modal').classList.remove('hidden');
+                        form.reset();
+                    }).catch(error => {
+                        console.error('Ошибка:', error);
+                        alert('Ошибка при отправке');
+                    });
+                });
+            });
+        });
     </script>
 </body>
 </html>

@@ -56,6 +56,12 @@
             background: #ffffff;
         }
         /* Стили для модального окна портфолио */
+        .card-custom-shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+        .card-custom-shadow:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
         .portfolio-modal {
             display: none;
             position: fixed;
@@ -123,7 +129,7 @@
         .carousel-images img {
             width: 100%;
             height: auto;
-            object-fit: cover;
+            object-fit: contain;
         }
         .carousel-btn {
             position: absolute;
@@ -142,6 +148,7 @@
         .carousel-btn.next {
             right: 0.5rem;
         }
+        
     </style>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdWiTIrAAAAAPkNKl2venguhorkTxGPAhJJKR9x"></script>
 </head>
@@ -237,15 +244,7 @@
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="relative group overflow-hidden rounded-xl shadow-lg card-hover">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
-                        <h3 class="text-white text-xl font-bold mb-2">Корпоративный сайт</h3>
-                        <p class="text-white text-center mb-4">Современный дизайн с адаптивной версткой под все устройства</p>
-                        <button data-modal="modal-project-1" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
-                    </div>
-                </div>
-                <div class="relative group overflow-hidden rounded-xl shadow-lg card-hover">
+                <div class="relative group overflow-hidden rounded-xl card-custom-shadow">
                     <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Project 2" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
                         <h3 class="text-white text-xl font-bold mb-2">Интернет-магазин</h3>
@@ -253,7 +252,15 @@
                         <button data-modal="modal-project-2" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
                     </div>
                 </div>
-                <div class="relative group overflow-hidden rounded-xl shadow-lg card-hover">
+                <div class="relative group overflow-hidden rounded-xl card-custom-shadow">
+                    <video src="./webm_1.webm" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" muted loop autoplay></video>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Сайт для репетитора начальных классов</h3>
+                        <p class="text-white text-center mb-4">Современный дизайн с адаптивной версткой под все устройства</p>
+                        <button data-modal="modal-project-1" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl card-custom-shadow">
                     <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1436&q=80" alt="Project 3" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
                         <h3 class="text-white text-xl font-bold mb-2">Мобильное приложение</h3>
@@ -319,9 +326,6 @@
                     <h3 class="text-xl font-bold mb-3">Оптимизация скорости сайта</h3>
                     <p class="text-gray-600">Ускоряю загрузку вашего сайта за счет оптимизации изображений, кода и серверных настроек, улучшая опыт пользователей и SEO.</p>
                 </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="#kontakt" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Связаться для заказа</a>
             </div>
         </div>
     </section>
@@ -492,7 +496,7 @@
                     <h4 class="text-lg font-bold mb-4">Навигация</h4>
                     <ul class="space-y-2">
                         <li><a href="#home" class="text-gray-400 hover:text-white transition">Главная</a></li>
-                        <li><a href="#jop" class="text-gray-400 hover:text-white transition">Услуги</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Услуги</a></li>
                         <li><a href="#kontakt" class="text-gray-400 hover:text-white transition">Контакты</a></li>
                     </ul>
                 </div>
@@ -541,28 +545,29 @@
     <div id="modal-project-1" class="portfolio-modal">
         <div class="portfolio-modal-content">
             <span class="close-modal">×</span>
-            <h3>Корпоративный сайт</h3>
+            <h3>Сайт для репетитора начальных классов</h3>
             <div class="carousel">
                 <div class="carousel-images">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1 Image 1">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1 Image 2">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Project 1 Image 3">
+                    <img src="./img/image.png" alt="Project 1 Image 1">
+                    <img src="./img/image copy.png" alt="Project 1 Image 2">
+                    <img src="./img/image copy 2.png" alt="Project 1 Image 3">
                 </div>
                 <button class="carousel-btn prev">❮</button>
                 <button class="carousel-btn next">❯</button>
             </div>
-            <p>Разработан современный корпоративный сайт для компании в сфере технологий. Целью было создание удобного и визуально привлекательного интерфейса для представления услуг компании.</p>
+            <p>Разработан сайт для репетитора начальных классов, предлагающего индивидуальные занятия. Цель — удобное представление услуг и привлечение новых учеников.</p>
             <p><strong>Технологии:</strong></p>
             <ul>
                 <li>HTML, CSS, JavaScript</li>
                 <li>Tailwind CSS</li>
-                <li>React</li>
             </ul>
-            <p><strong>Срок реализации:</strong> 4 недели</p>
-            <p><strong>Результаты:</strong> Увеличение времени пребывания на сайте на 30%, рост заявок на услуги на 25%.</p>
-            <p><a href="#" class="text-purple-600 hover:underline">Посмотреть проект</a></p>
+            <p><strong>Срок реализации:</strong> 1-2 недели</p>
+            <p><strong>Стоиость</strong> 5000р</p>
+            <p><strong>Результаты:</strong> Увеличение заявок на занятия на 20%, улучшение взаимодействия с родителями.</p>
+            <p><a href="https://funnyschool72.github.io/tuter/" class="text-purple-600 hover:underline">Посмотреть проект</a></p>
         </div>
     </div>
+
     <div id="modal-project-2" class="portfolio-modal">
         <div class="portfolio-modal-content">
             <span class="close-modal">×</span>

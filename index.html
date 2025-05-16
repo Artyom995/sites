@@ -331,75 +331,212 @@
         </div>
     </section>
 
-    
-    <!-- Отзывы -->
-    <section class="py-20 bg-white">
+    <!-- Секция нейросотрудника -->
+<!-- Секция нейросотрудников -->
+    <section class="py-20 bg-gray-100" id="ai-team">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Что говорят клиенты</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Нейросотрудники</h2>
                 <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl shadow-sm card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-xl mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">"Работа выполнена в срок и с высоким качеством. Артём проявил профессионализм и внимание к деталям. Рекомендую!"</p>
-                    <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Анна Смирнова</h4>
-                            <p class="text-gray-500 text-sm">Директор, ООО "ТехноПром"</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-sm card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-xl mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-6">"Сайт, который разработал для нас, превзошел все ожидания. Конверсия увеличилась на 40% в первый же месяц. Спасибо!"</p>
-                    <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Иван Петров</h4>
-                            <p class="text-gray-500 text-sm">Основатель, "GreenMarket"</p>
+
+            <!-- Описание возможностей -->
+            <div class="grid md:grid-cols-2 gap-12 mb-20">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-purple-600">Цифровые сотрудники нового поколения</h3>
+                    <p class="text-gray-600">
+                        Наши нейросотрудники - это AI-ассистенты с глубоким обучением, способные решать комплексные задачи 
+                        24/7. Они сочетают в себе мощь нейросетей и бизнес-логики для автоматизации процессов.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="text-purple-600 text-xl mt-1 mr-4">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">Основные возможности</h4>
+                                <ul class="list-disc list-inside text-gray-600 pl-4">
+                                    <li>Обработка естественного языка (NLP)</li>
+                                    <li>Прогнозная аналитика</li>
+                                    <li>Персонализация взаимодействия</li>
+                                    <li>Автоматизация рутинных задач</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-xl shadow-sm card-hover">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-xl mr-2">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+
+                <!-- Анимированная иконка -->
+                <div class="relative flex items-center justify-center">
+                    <div class="ai-loader">
+                        <div class="orbit"></div>
+                        <div class="orbit delay-1"></div>
+                        <div class="orbit delay-2"></div>
+                        <div class="core"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Пример нейросотрудника -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Чат-интерфейс -->
+                    <div class="p-8 border-r border-gray-100">
+                        <div class="flex items-start mb-6">
+                            <div class="ai-avatar">
+                                <div class="animated-icon">
+                                    <div class="cube">
+                                        <div class="face front"></div>
+                                        <div class="face back"></div>
+                                        <div class="face right"></div>
+                                        <div class="face left"></div>
+                                        <div class="face top"></div>
+                                        <div class="face bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ml-6 flex-1">
+                                <h3 class="text-xl font-bold mb-2">Таро-Ассистент</h3>
+                                <p class="text-gray-600">Пример нейросотрудника: AI с обучением на 10,000+ раскладов</p>
+                            </div>
+                        </div>
+                        <div class="chat-interface bg-gray-50 rounded-lg p-4">
+                            <div class="chat-messages h-48 overflow-y-auto mb-4">
+                                <div class="bot-message">
+                                    <div class="text-sm text-gray-500 mb-2">Цифровой Оракул</div>
+                                    <div class="bg-white p-3 rounded-lg shadow-sm">
+                                        Готов раскрыть тайны вселенной. Задайте вопрос или выберите тип расклада
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <input type="text" 
+                                    class="flex-1 border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                                    placeholder="Введите ваш вопрос...">
+                                <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+                                    Отправить
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-6">"Отличное мобильное приложение с удобным интерфейсом. Пользователи довольны, а мы видим рост продаж через мобильные устройства."</p>
-                    <div class="flex items-center">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Елена Козлова</h4>
-                            <p class="text-gray-500 text-sm">Маркетинг-директор, "FashionStyle"</p>
+
+                    <!-- Описание возможностей -->
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-6">Возможности Таро-Ассистента</h3>
+                        <div class="grid gap-4">
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-4">
+                                    <i class="fas fa-crystal-ball"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">78 Арканов</h4>
+                                    <p class="text-gray-600">Полная колода с историческими трактовками и AI-интерпретациями</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-4">
+                                    <i class="fas fa-chart-network"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Паттерны отношений</h4>
+                                    <p class="text-gray-600">Анализ совместимости и прогноз развития отношений</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-4">
+                                    <i class="fas fa-dna"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-2">Нейро-интуиция</h4>
+                                    <p class="text-gray-600">Гибридная модель: машинное обучение + эзотерические алгоритмы</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+    /* Анимация нейроядра */
+    .ai-loader {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+
+    .orbit {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #8b5cf6;
+        border-radius: 50%;
+        animation: pulse 3s infinite ease-in-out;
+        opacity: 0.3;
+    }
+
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1s; }
+
+    .core {
+        position: absolute;
+        top: 35%;
+        left: 35%;
+        width: 30%;
+        height: 30%;
+        background: #8b5cf6;
+        border-radius: 50%;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(0.8); opacity: 0.3; }
+        50% { transform: scale(1.2); opacity: 0.1; }
+        100% { transform: scale(0.8); opacity: 0.3; }
+    }
+
+    @keyframes glow {
+        from { box-shadow: 0 0 10px #8b5cf644; }
+        to { box-shadow: 0 0 30px #8b5cf688; }
+    }
+
+  /* Анимированный куб */
+    .animated-icon {
+        width: 40px;  /* Было 60px */
+        height: 40px; /* Было 60px */
+        perspective: 500px; /* Уменьшил перспективу для лучшего отображения */
+    }
+
+    .cube {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotate 8s infinite linear;
+    }
+
+    .face {
+        position: absolute;
+        width: 40px;  /* Было 60px */
+        height: 40px; /* Было 60px */
+        background: rgba(139, 92, 246, 0.9);
+        border: 1px solid #fff; /* Уменьшил толщину границы */
+    }
+
+    .front  { transform: translateZ(20px); } /* Было 30px */
+    .back   { transform: translateZ(-20px) rotateY(180deg); }
+    .right  { transform: rotateY(90deg) translateZ(20px); }
+    .left   { transform: rotateY(-90deg) translateZ(20px); }
+    .top    { transform: rotateX(90deg) translateZ(20px); }
+    .bottom { transform: rotateX(-90deg) translateZ(20px); }
+
+    @keyframes rotate {
+        from { transform: rotateX(0) rotateY(0) rotateZ(0); }
+        to { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+    }
+    </style>
+
 
     <!-- Контакты -->
     <section class="py-20 gradient-bg text-white" id="kontakt">

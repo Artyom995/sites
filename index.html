@@ -332,30 +332,30 @@
     </section>
 
     <!-- Секция нейросотрудника -->
-<!-- Секция нейросотрудников -->
-    <section class="py-20 bg-gray-100" id="ai-team">
+    <!-- Секция нейросотрудников -->
+    <section class="py-12 md:py-20 bg-gray-100" id="ai-team">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Нейросотрудники</h2>
-                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Нейросотрудники</h2>
+                <div class="w-16 md:w-20 h-1 bg-purple-600 mx-auto"></div>
             </div>
 
-            <!-- Описание возможностей -->
-            <div class="grid md:grid-cols-2 gap-12 mb-20">
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold text-purple-600">Цифровые сотрудники нового поколения</h3>
-                    <p class="text-gray-600">
+            <!-- Основное описание -->
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20">
+                <div class="space-y-4 md:space-y-6">
+                    <h3 class="text-xl md:text-2xl font-bold text-purple-600">Цифровые сотрудники нового поколения</h3>
+                    <p class="text-sm md:text-base text-gray-600">
                         Наши нейросотрудники - это AI-ассистенты с глубоким обучением, способные решать комплексные задачи 
                         24/7. Они сочетают в себе мощь нейросетей и бизнес-логики для автоматизации процессов.
                     </p>
-                    <div class="space-y-4">
+                    <div class="space-y-2 md:space-y-4">
                         <div class="flex items-start">
-                            <div class="text-purple-600 text-xl mt-1 mr-4">
+                            <div class="text-purple-600 text-lg md:text-xl mt-1 mr-3 md:mr-4">
                                 <i class="fas fa-brain"></i>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold">Основные возможности</h4>
-                                <ul class="list-disc list-inside text-gray-600 pl-4">
+                                <h4 class="text-base md:text-lg font-semibold">Основные возможности</h4>
+                                <ul class="list-disc list-inside text-gray-600 pl-3 md:pl-4 text-sm md:text-base">
                                     <li>Обработка естественного языка (NLP)</li>
                                     <li>Прогнозная аналитика</li>
                                     <li>Персонализация взаимодействия</li>
@@ -367,7 +367,7 @@
                 </div>
 
                 <!-- Анимированная иконка -->
-                <div class="relative flex items-center justify-center">
+                <div class="relative flex items-center justify-center mt-6 md:mt-0">
                     <div class="ai-loader">
                         <div class="orbit"></div>
                         <div class="orbit delay-1"></div>
@@ -377,12 +377,11 @@
                 </div>
             </div>
 
-            <!-- Пример нейросотрудника -->
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- Чат-интерфейс -->
-                    <div class="p-8 border-r border-gray-100">
-                        <div class="flex items-start mb-6">
+            <!-- Таро-Ассистент -->
+            <div class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden mb-8 md:mb-12">
+                <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
+                    <div class="p-4 md:p-8 border-r border-gray-100">
+                        <div class="flex items-start mb-4 md:mb-6">
                             <div class="ai-avatar">
                                 <div class="animated-icon">
                                     <div class="cube">
@@ -395,60 +394,133 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="ml-6 flex-1">
-                                <h3 class="text-xl font-bold mb-2">Таро-Ассистент</h3>
-                                <p class="text-gray-600">Пример нейросотрудника: AI с обучением на 10,000+ раскладов</p>
+                            <div class="ml-4 md:ml-6 flex-1">
+                                <h3 class="text-lg md:text-xl font-bold mb-2">Таро-Ассистент</h3>
+                                <p class="text-xs md:text-sm text-gray-600">AI с обучением на 10,000+ раскладов</p>
                             </div>
                         </div>
-                        <div class="chat-interface bg-gray-50 rounded-lg p-4">
-                            <div class="chat-messages h-48 overflow-y-auto mb-4">
+                        <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
+                            <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
                                 <div class="bot-message">
-                                    <div class="text-sm text-gray-500 mb-2">Цифровой Оракул</div>
-                                    <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Цифровой Оракул</div>
+                                    <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
                                         Готов раскрыть тайны вселенной. Задайте вопрос или выберите тип расклада
                                     </div>
                                 </div>
                             </div>
                             <div class="flex gap-2">
                                 <input type="text" 
-                                    class="flex-1 border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
+                                    class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
                                     placeholder="Введите ваш вопрос...">
-                                <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+                                <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
                                     Отправить
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Описание возможностей -->
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold mb-6">Возможности Таро-Ассистента</h3>
-                        <div class="grid gap-4">
+                    <div class="p-4 md:p-8">
+                        <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6">Возможности Таро-Ассистента</h3>
+                        <div class="grid gap-2 md:gap-4">
                             <div class="flex items-start">
-                                <div class="text-purple-600 mt-1 mr-4">
-                                    <i class="fas fa-crystal-ball"></i>
+                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                    <i class="fas fa-crystal-ball text-sm md:text-base"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-2">78 Арканов</h4>
-                                    <p class="text-gray-600">Полная колода с историческими трактовками и AI-интерпретациями</p>
+                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">78 Арканов</h4>
+                                    <p class="text-xs md:text-sm text-gray-600">Полная колода с историческими трактовками и AI-интерпретациями</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="text-purple-600 mt-1 mr-4">
-                                    <i class="fas fa-chart-network"></i>
+                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                    <i class="fas fa-chart-network text-sm md:text-base"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-2">Паттерны отношений</h4>
-                                    <p class="text-gray-600">Анализ совместимости и прогноз развития отношений</p>
+                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Паттерны отношений</h4>
+                                    <p class="text-xs md:text-sm text-gray-600">Анализ совместимости и прогноз развития отношений</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="text-purple-600 mt-1 mr-4">
-                                    <i class="fas fa-dna"></i>
+                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                    <i class="fas fa-dna text-sm md:text-base"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold mb-2">Нейро-интуиция</h4>
-                                    <p class="text-gray-600">Гибридная модель: машинное обучение + эзотерические алгоритмы</p>
+                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Нейро-интуиция</h4>
+                                    <p class="text-xs md:text-sm text-gray-600">Гибридная модель: машинное обучение + эзотерические алгоритмы</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Дизайн-Ассистент -->
+            <div class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden">
+                <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
+                    <div class="p-4 md:p-8 border-r border-gray-100">
+                        <div class="flex items-start mb-4 md:mb-6">
+                            <div class="ai-avatar">
+                                <div class="design-animation">
+                                    <div class="shape-container">
+                                        <div class="shape triangle"></div>
+                                        <div class="shape square"></div>
+                                        <div class="shape circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ml-4 md:ml-6 flex-1">
+                                <h3 class="text-lg md:text-xl font-bold mb-2">Дизайн-Ассистент</h3>
+                                <p class="text-xs md:text-sm text-gray-600">AI для создания креативных концепций</p>
+                            </div>
+                        </div>
+                        <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
+                            <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
+                                <div class="bot-message">
+                                    <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Креативный Генератор</div>
+                                    <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
+                                        Готов создавать уникальные дизайны. Опишите вашу концепцию
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <input type="text" 
+                                    class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
+                                    placeholder="Опишите ваш дизайн...">
+                                <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
+                                    Создать
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 md:p-8">
+                        <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6">Возможности Дизайн-Ассистента</h3>
+                        <div class="grid gap-2 md:gap-4">
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                    <i class="fas fa-palette text-sm md:text-base"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Генерация стиля</h4>
+                                    <p class="text-xs md:text-sm text-gray-600">Автоматический подбор цветовых схем и типографики</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                    <i class="fas fa-vector-square text-sm md:text-base"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Векторная графика</h4>
+                                    <p class="text-xs md:text-sm text-gray-600">Создание SVG-графики по текстовому описанию</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                    <i class="fas fa-magic text-sm md:text-base"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Авто-макетирование</h4>
+                                    <p class="text-xs md:text-sm text-gray-600">Адаптивная верстка с учетом трендов дизайна</p>
                                 </div>
                             </div>
                         </div>
@@ -459,82 +531,163 @@
     </section>
 
     <style>
-    /* Анимация нейроядра */
-    .ai-loader {
-        position: relative;
-        width: 200px;
-        height: 200px;
-    }
+        /* Общие стили анимаций */
+        .ai-loader {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
 
-    .orbit {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 2px solid #8b5cf6;
-        border-radius: 50%;
-        animation: pulse 3s infinite ease-in-out;
-        opacity: 0.3;
-    }
+        .orbit {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #8b5cf6;
+            border-radius: 50%;
+            animation: pulse 3s infinite ease-in-out;
+            opacity: 0.3;
+        }
 
-    .delay-1 { animation-delay: 0.5s; }
-    .delay-2 { animation-delay: 1s; }
+        .delay-1 { animation-delay: 0.5s; }
+        .delay-2 { animation-delay: 1s; }
 
-    .core {
-        position: absolute;
-        top: 35%;
-        left: 35%;
-        width: 30%;
-        height: 30%;
-        background: #8b5cf6;
-        border-radius: 50%;
-        animation: glow 2s infinite alternate;
-    }
+        .core {
+            position: absolute;
+            top: 35%;
+            left: 35%;
+            width: 30%;
+            height: 30%;
+            background: #8b5cf6;
+            border-radius: 50%;
+            animation: glow 2s infinite alternate;
+        }
 
-    @keyframes pulse {
-        0% { transform: scale(0.8); opacity: 0.3; }
-        50% { transform: scale(1.2); opacity: 0.1; }
-        100% { transform: scale(0.8); opacity: 0.3; }
-    }
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.1; }
+            100% { transform: scale(0.8); opacity: 0.3; }
+        }
 
-    @keyframes glow {
-        from { box-shadow: 0 0 10px #8b5cf644; }
-        to { box-shadow: 0 0 30px #8b5cf688; }
-    }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #8b5cf644; }
+            to { box-shadow: 0 0 30px #8b5cf688; }
+        }
 
-  /* Анимированный куб */
-    .animated-icon {
-        width: 40px;  /* Было 60px */
-        height: 40px; /* Было 60px */
-        perspective: 500px; /* Уменьшил перспективу для лучшего отображения */
-    }
+        /* Анимация куба */
+        .animated-icon {
+            width: 40px;
+            height: 40px;
+            perspective: 500px;
+        }
 
-    .cube {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transform-style: preserve-3d;
-        animation: rotate 8s infinite linear;
-    }
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 8s infinite linear;
+        }
 
-    .face {
-        position: absolute;
-        width: 40px;  /* Было 60px */
-        height: 40px; /* Было 60px */
-        background: rgba(139, 92, 246, 0.9);
-        border: 1px solid #fff; /* Уменьшил толщину границы */
-    }
+        .face {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(139, 92, 246, 0.9);
+            border: 1px solid #fff;
+        }
 
-    .front  { transform: translateZ(20px); } /* Было 30px */
-    .back   { transform: translateZ(-20px) rotateY(180deg); }
-    .right  { transform: rotateY(90deg) translateZ(20px); }
-    .left   { transform: rotateY(-90deg) translateZ(20px); }
-    .top    { transform: rotateX(90deg) translateZ(20px); }
-    .bottom { transform: rotateX(-90deg) translateZ(20px); }
+        .front  { transform: translateZ(20px); }
+        .back   { transform: translateZ(-20px) rotateY(180deg); }
+        .right  { transform: rotateY(90deg) translateZ(20px); }
+        .left   { transform: rotateY(-90deg) translateZ(20px); }
+        .top    { transform: rotateX(90deg) translateZ(20px); }
+        .bottom { transform: rotateX(-90deg) translateZ(20px); }
 
-    @keyframes rotate {
-        from { transform: rotateX(0) rotateY(0) rotateZ(0); }
-        to { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
-    }
+        @keyframes rotate {
+            from { transform: rotateX(0) rotateY(0) rotateZ(0); }
+            to { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+        }
+
+        /* Новая анимация для дизайнера */
+        .design-animation {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .shape-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(139, 92, 246, 0.8);
+            animation: morph 6s infinite ease-in-out;
+        }
+
+        .triangle {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0.3s;
+        }
+
+        .square {
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            animation-delay: 0.6s;
+        }
+
+        .circle {
+            clip-path: circle(50% at 50% 50%);
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            animation-delay: 0.9s;
+        }
+
+        @keyframes morph {
+            0% { 
+                transform: rotate(0deg) scale(1);
+                opacity: 0.8;
+            }
+            50% { 
+                transform: rotate(180deg) scale(0.8);
+                opacity: 0.4;
+                background: rgba(139, 92, 246, 0.6);
+            }
+            100% { 
+                transform: rotate(360deg) scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        /* Адаптация для мобильных */
+        @media (max-width: 768px) {
+            .chat-messages {
+                height: 150px !important;
+            }
+            .ai-loader {
+                width: 150px;
+                height: 150px;
+            }
+            .design-animation {
+                width: 40px;
+                height: 40px;
+            }
+            .shape {
+                animation-duration: 4s;
+            }
+        }
     </style>
 
 

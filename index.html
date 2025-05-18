@@ -383,15 +383,10 @@
                     <div class="p-4 md:p-8 border-r border-gray-100">
                         <div class="flex items-start mb-4 md:mb-6">
                             <div class="ai-avatar">
-                                <div class="animated-icon">
-                                    <div class="cube">
-                                        <div class="face front"></div>
-                                        <div class="face back"></div>
-                                        <div class="face right"></div>
-                                        <div class="face left"></div>
-                                        <div class="face top"></div>
-                                        <div class="face bottom"></div>
-                                    </div>
+                                <div class="tarot-animation">
+                                    <div class="tarot-card"></div>
+                                    <div class="tarot-card"></div>
+                                    <div class="tarot-card"></div>
                                 </div>
                             </div>
                             <div class="ml-4 md:ml-6 flex-1">
@@ -424,7 +419,7 @@
                         <div class="grid gap-2 md:gap-4">
                             <div class="flex items-start">
                                 <div class="text-purple-600 mt-1 mr-3 md:mr-4">
-                                    <i class="fas fa-crystal-ball text-sm md:text-base"></i>
+                                    <i class="fas fa-layer-group"></i> <!-- Новая иконка колоды карт -->
                                 </div>
                                 <div>
                                     <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">78 Арканов</h4>
@@ -433,7 +428,7 @@
                             </div>
                             <div class="flex items-start">
                                 <div class="text-purple-600 mt-1 mr-3 md:mr-4">
-                                    <i class="fas fa-chart-network text-sm md:text-base"></i>
+                                    <i class="fas fa-people-arrows"></i> <!-- Новая иконка связей -->
                                 </div>
                                 <div>
                                     <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Паттерны отношений</h4>
@@ -442,7 +437,7 @@
                             </div>
                             <div class="flex items-start">
                                 <div class="text-purple-600 mt-1 mr-3 md:mr-4">
-                                    <i class="fas fa-dna text-sm md:text-base"></i>
+                                    <i class="fas fa-dna text-sm md:text-base"></i> <!-- Альтернативная иконка для нейро-интуиции -->
                                 </div>
                                 <div>
                                     <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Нейро-интуиция</h4>
@@ -460,12 +455,10 @@
                     <div class="p-4 md:p-8 border-r border-gray-100">
                         <div class="flex items-start mb-4 md:mb-6">
                             <div class="ai-avatar">
+                                <!-- Измененная секция Дизайн-Ассистента -->
                                 <div class="design-animation">
-                                    <div class="shape-container">
-                                        <div class="shape triangle"></div>
-                                        <div class="shape square"></div>
-                                        <div class="shape circle"></div>
-                                    </div>
+                                    <div class="palette"></div>
+                                    <i class="fas fa-paint-brush brush"></i>
                                 </div>
                             </div>
                             <div class="ml-4 md:ml-6 flex-1">
@@ -573,103 +566,161 @@
             to { box-shadow: 0 0 30px #8b5cf688; }
         }
 
-        /* Анимация куба */
-        .animated-icon {
-            width: 40px;
-            height: 40px;
-            perspective: 500px;
+
+        /* Миниатюрная версия анимации карт Таро */
+        .tarot-animation {
+            position: relative;
+            width: 36px;  /* Сильно уменьшено */
+            height: 50px; /* Сохраняем пропорции */
+            perspective: 800px;
+            margin: 0 auto; /* Центрирование */
         }
 
-        .cube {
+        .tarot-card {
+            position: absolute;
             width: 100%;
             height: 100%;
-            position: relative;
+            background: #fff;
+            border: 1.5px solid #8b5cf6; /* Тонкая рамка */
+            border-radius: 4px;
             transform-style: preserve-3d;
-            animation: rotate 8s infinite linear;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            backface-visibility: hidden;
         }
 
-        .face {
+        .tarot-card::before {
+            content: '🎴';
             position: absolute;
-            width: 40px;
-            height: 40px;
-            background: rgba(139, 92, 246, 0.9);
-            border: 1px solid #fff;
+            font-size: 14px; /* Очень маленький символ */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.7;
         }
 
-        .front  { transform: translateZ(20px); }
-        .back   { transform: translateZ(-20px) rotateY(180deg); }
-        .right  { transform: rotateY(90deg) translateZ(20px); }
-        .left   { transform: rotateY(-90deg) translateZ(20px); }
-        .top    { transform: rotateX(90deg) translateZ(20px); }
-        .bottom { transform: rotateX(-90deg) translateZ(20px); }
-
-        @keyframes rotate {
-            from { transform: rotateX(0) rotateY(0) rotateZ(0); }
-            to { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+        .tarot-card:nth-child(1) {
+            animation-name: mini-spread-1;
         }
 
-        /* Новая анимация для дизайнера */
+        .tarot-card:nth-child(2) {
+            animation-name: mini-spread-2;
+            animation-delay: 0.1s;
+        }
+
+        .tarot-card:nth-child(3) {
+            animation-name: mini-spread-3;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes mini-spread-1 {
+            0%, 100% { transform: translateX(0) rotate(-4deg); }
+            50% { transform: translateX(-8px) rotate(-6deg); }
+        }
+
+        @keyframes mini-spread-2 {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(2deg); }
+        }
+
+        @keyframes mini-spread-3 {
+            0%, 100% { transform: translateX(0) rotate(4deg); }
+            50% { transform: translateX(8px) rotate(6deg); }
+        }
+
+        /* Адаптация для мобильных */
+        @media (max-width: 768px) {
+            .tarot-animation {
+                width: 30px;
+                height: 42px;
+            }
+            
+            .tarot-card::before {
+                font-size: 12px;
+            }
+            
+            @keyframes mini-spread-1 {
+                50% { transform: translateX(-6px) rotate(-5deg); }
+            }
+            
+            @keyframes mini-spread-3 {
+                50% { transform: translateX(6px) rotate(5deg); }
+            }
+        }
+
+
+
+        /* Новая анимация для дизайн-ассистента (палитра с кисточкой) */
         .design-animation {
+            position: relative;
             width: 50px;
             height: 50px;
-            position: relative;
-            transform-style: preserve-3d;
         }
 
-        .shape-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
+        .palette {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #ff6b6b 0% 15%,
+                #ffd93d 15% 30%,
+                #6cff6b 30% 45%,
+                #6b83ff 45% 60%,
+                #c56bff 60% 75%,
+                #ff6bc9 75% 90%,
+                #ff6b6b 90% 100%
+            );
+            animation: palette-rotate 6s linear infinite;
         }
 
-        .shape {
+        .brush {
             position: absolute;
-            background: rgba(139, 92, 246, 0.8);
-            animation: morph 6s infinite ease-in-out;
+            top: 5px;
+            left: 25px;
+            font-size: 24px;
+            color: #8b5cf6;
+            transform-origin: bottom center;
+            animation: brush-paint 2s ease-in-out infinite;
         }
 
-        .triangle {
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            width: 80%;
-            height: 80%;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0.3s;
+        @keyframes palette-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        .square {
-            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
-            width: 60%;
-            height: 60%;
-            top: 20%;
-            left: 20%;
-            animation-delay: 0.6s;
-        }
-
-        .circle {
-            clip-path: circle(50% at 50% 50%);
-            width: 70%;
-            height: 70%;
-            top: 15%;
-            left: 15%;
-            animation-delay: 0.9s;
-        }
-
-        @keyframes morph {
-            0% { 
-                transform: rotate(0deg) scale(1);
-                opacity: 0.8;
+        @keyframes brush-paint {
+            0%, 100% { 
+                transform: translateY(0) rotate(-15deg);
             }
             50% { 
-                transform: rotate(180deg) scale(0.8);
-                opacity: 0.4;
-                background: rgba(139, 92, 246, 0.6);
-            }
-            100% { 
-                transform: rotate(360deg) scale(1);
-                opacity: 0.8;
+                transform: translateY(10px) rotate(15deg);
             }
         }
+
+        /* Адаптация для мобильных */
+        @media (max-width: 768px) {
+            .tarot-animation {
+                width: 45px;
+                height: 60px;
+            }
+            
+            .design-animation {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .palette {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .brush {
+                font-size: 18px;
+            }
+        }
+
 
         /* Адаптация для мобильных */
         @media (max-width: 768px) {

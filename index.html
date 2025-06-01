@@ -170,6 +170,49 @@
             right: 0.5rem;
         }
         
+        /* АНИМАЦИИ Стили для скрытия секций и элементов до анимации */
+        /* Стили для скрытия секций и элементов до анимации */
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Анимация дочерних элементов */
+        .section-hidden .animate-child {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .section-visible .animate-child {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Задержки для дочерних элементов */
+        section .animate-child:nth-child(1) { transition-delay: 0.1s; }
+        section .animate-child:nth-child(2) { transition-delay: 0.15s; }
+        section .animate-child:nth-child(3) { transition-delay: 0.2s; }
+        section .animate-child:nth-child(4) { transition-delay: 0.25s; }
+        section .animate-child:nth-child(5) { transition-delay: 0.3s; }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .section-hidden {
+                transform: translateY(20px);
+                transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            }
+            .section-hidden .animate-child {
+                transform: translateY(15px);
+                transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+            }
+        }
     </style>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdWiTIrAAAAAPkNKl2venguhorkTxGPAhJJKR9x"></script>
 </head>
@@ -1020,8 +1063,8 @@
             <h3>Сайт для мастера вязаных сумочек</h3>
             <div class="carousel">
                 <div class="carousel-images">
-                    <img src="./img/kri2.png" alt="Project 2 Image 1">
-                    <img src="./img/kri1.png" alt="Project 2 Image 2">
+                    <img src="./img/kri1.png" alt="Project 2 Image 1">
+                    <img src="./img/kri2.png" alt="Project 2 Image 2">
                 </div>
                 <button class="carousel-btn prev">❮</button>
                 <button class="carousel-btn next">❯</button>
@@ -1200,6 +1243,32 @@
                 showImage(currentIndex);
             });
         });
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '20px'
+            });
+
+            sections.forEach(section => {
+                section.classList.add('section-hidden');
+                const children = section.querySelectorAll('h1, h2, h3, p, .card-hover, img, .ai-loader, .chat-interface');
+                children.forEach(child => child.classList.add('animate-child'));
+                observer.observe(section);
+            });
+        });
     </script>
+
 </body>
 </html>

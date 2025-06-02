@@ -212,6 +212,21 @@
                 transform: translateY(15px);
                 transition: opacity 0.4s ease-out, transform 0.4s ease-out;
             }
+
+            /* Нейросотрудники параграфы */
+            .grid.gap-2 > .flex > div > h4 {
+                margin-bottom: 0.25rem;
+            }
+            .grid.gap-2 > .flex > div > p {
+                margin-top: 0.25rem;
+            }
+            .grid.gap-2 > .flex > div > p.animate-child {
+                transform: translateY(10px);
+                transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+            }
+            .section-visible .grid.gap-2 > .flex > div > p.animate-child {
+                transform: translateY(0);
+            }
         }
     </style>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdWiTIrAAAAAPkNKl2venguhorkTxGPAhJJKR9x"></script>
@@ -254,7 +269,7 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Создам уникальные цифровые решения</h1>
-                    <p class="text-xl mb-8 opacity-90">Я разрабатываю современные веб-приложения и сайты, которые выделяют ваш бизнес среди конкурентов.</p>
+                    <p class="text-xl mb-8 opacity-90">Я разрабатываю современные веб-сайты, которые выделяют ваш бизнес среди конкурентов.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#kontakt" class="bg-white text-purple-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-center transition duration-300">Реализовать идею</a>
                         <a href="#services" class="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 font-bold py-3 px-8 rounded-full text-center transition duration-300">Узнать больше</a>

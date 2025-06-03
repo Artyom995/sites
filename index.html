@@ -453,6 +453,7 @@
                 <h2 class="text-2xl md:text-4xl font-bold mb-4">Нейросотрудники</h2>
                 <div class="w-16 md:w-20 h-1 bg-purple-600 mx-auto"></div>
             </div>
+
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20">
                 <div class="space-y-4 md:space-y-6">
                     <h3 class="text-xl md:text-2xl font-bold text-purple-600 animate-child">Цифровые сотрудники нового поколения</h3>
@@ -488,7 +489,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Выбор нейросотрудника -->
             <div class="text-center mb-8">
                 <select id="aiSelector" class="border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400" onchange="switchAI(event)">
@@ -499,9 +499,14 @@
                 </select>
             </div>
 
+            <!-- Уведомление -->
+            <div id="aiNotification" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 z-50 pointer-events-none">
+                Я пока не подключён! Мой разработчик ищет сервер для моего обучения — видимо, я слишком умён для обычного оборудования 😉
+            </div>
+
             <!-- Контейнер для нейросотрудников -->
             <div id="aiContainer">
-                <!-- Дизайн-Ассистент (по умолчанию) -->
+                <!-- Дизайн-Ассистент -->
                 <div id="designAssistant" class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden">
                     <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
                         <div class="p-4 md:p-8 border-r border-gray-100">
@@ -518,7 +523,7 @@
                                 </div>
                             </div>
                             <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
-                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
+                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4" id="designChatMessages">
                                     <div class="bot-message">
                                         <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Креативный Генератор</div>
                                         <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
@@ -528,9 +533,9 @@
                                 </div>
                                 <div class="flex gap-2">
                                     <input type="text" 
-                                        class="flex-1 border rounded-lg p-2 text-sm md:text-base focus outline-none focus:ring-2 focus:ring-purple-400"
+                                        class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
                                         placeholder="Опишите ваш дизайн...">
-                                    <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
+                                    <button class="ai-action-btn bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base" data-chat-id="designChatMessages">
                                         Создать
                                     </button>
                                 </div>
@@ -590,7 +595,7 @@
                                 </div>
                             </div>
                             <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
-                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
+                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4" id="tarotChatMessages">
                                     <div class="bot-message">
                                         <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Цифровой Оракул</div>
                                         <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
@@ -602,7 +607,7 @@
                                     <input type="text" 
                                         class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
                                         placeholder="Введите ваш вопрос...">
-                                    <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
+                                    <button class="ai-action-btn bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base" data-chat-id="tarotChatMessages">
                                         Отправить
                                     </button>
                                 </div>
@@ -660,7 +665,7 @@
                                 </div>
                             </div>
                             <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
-                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
+                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4" id="hrChatMessages">
                                     <div class="bot-message">
                                         <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Ваш HR-помощник</div>
                                         <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
@@ -672,7 +677,7 @@
                                     <input type="text" 
                                         class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
                                         placeholder="Опишите вакансию...">
-                                    <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
+                                    <button class="ai-action-btn bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base" data-chat-id="hrChatMessages">
                                         Найти
                                     </button>
                                 </div>
@@ -720,7 +725,7 @@
                         <div class="p-4 md:p-8 border-r border-gray-100">
                             <div class="flex items-start mb-4 md:mb-6">
                                 <div class="ai-avatar">
-                                    <div class="coach-animation">
+                                    <div class="coach-display">
                                         <i class="fas fa-lightbulb"></i>
                                     </div>
                                 </div>
@@ -730,7 +735,7 @@
                                 </div>
                             </div>
                             <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
-                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
+                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4" id="coachChatMessages">
                                     <div class="bot-message">
                                         <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Ваш личный коуч</div>
                                         <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
@@ -742,7 +747,7 @@
                                     <input type="text" 
                                         class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
                                         placeholder="Опишите вашу цель...">
-                                    <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
+                                    <button class="ai-action-btn bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base" data-chat-id="coachChatMessages">
                                         Начать
                                     </button>
                                 </div>
@@ -786,6 +791,7 @@
             </div>
 
             <script>
+                // Функция переключения ассистентов
                 function switchAI(event) {
                     const selectedAI = event.target.value;
                     const designAssistant = document.getElementById('designAssistant');
@@ -817,18 +823,85 @@
                     }
                 }
 
-                // Показываем Дизайн-Ассистента по умолчанию при загрузке
+                // Функция для показа уведомления
+                function showAINotification() {
+                    const notification = document.getElementById('aiNotification');
+                    if (!notification) {
+                        console.error('Уведомление не найдено!');
+                        return;
+                    }
+
+                    // Показываем уведомление
+                    notification.classList.remove('opacity-0');
+                    notification.classList.add('opacity-100');
+
+                    // Скрываем через 3 секунды
+                    setTimeout(() => {
+                        notification.classList.remove('opacity-100');
+                        notification.classList.add('opacity-0');
+                    }, 3000);
+                }
+
+                // Функция для добавления сообщения в чат
+                function addMessageToChat(chatId) {
+                    const chatMessages = document.getElementById(chatId);
+                    if (!chatMessages) {
+                        console.error('Чат не найден для ID:', chatId);
+                        return;
+                    }
+
+                    // Создаём новое сообщение
+                    const newMessage = document.createElement('div');
+                    newMessage.className = 'bot-message';
+                    newMessage.innerHTML = `
+                        <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Ассистент</div>
+                        <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
+                            Я пока не подключён! Мой разработчик ищет сервер для моего обучения — видимо, я слишком умён для обычного оборудования 😉
+                        </div>
+                    `;
+
+                    // Добавляем сообщение в чат
+                    chatMessages.appendChild(newMessage);
+
+                    // Прокручиваем чат вниз, чтобы последнее сообщение было видно
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+
+                // Добавляем обработчики событий для кнопок
                 document.addEventListener('DOMContentLoaded', () => {
+                    // Показываем Дизайн-Ассистента по умолчанию
                     const designAssistant = document.getElementById('designAssistant');
                     if (designAssistant) {
                         designAssistant.classList.remove('hidden');
                     }
+
+                    // Находим все кнопки с классом ai-action-btn
+                    const buttons = document.querySelectorAll('.ai-action-btn');
+                    buttons.forEach(button => {
+                        button.addEventListener('click', (event) => {
+                            event.preventDefault(); // Предотвращаем стандартное поведение кнопки
+
+                            // Добавляем сообщение в чат
+                            const chatId = button.getAttribute('data-chat-id');
+                            if (chatId) {
+                                addMessageToChat(chatId);
+                            }
+
+                            // Показываем всплывающее уведомление
+                            showAINotification();
+                        });
+                    });
                 });
             </script>
 
             <style>
                 .hidden {
                     display: none;
+                }
+
+                /* Стили для уведомления */
+                #aiNotification {
+                    transition: opacity 0.3s ease-in-out;
                 }
             </style>
         </div>

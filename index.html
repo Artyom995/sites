@@ -332,25 +332,62 @@
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-xl card-custom-shadow">
-                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1436&q=80" alt="Project 3" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <video src="./kri.webm" class="w-full h-64 object-fill transition duration-500 group-hover:scale-110" muted loop autoplay playsinline></video>
                     <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
-                        <h3 class="text-white text-xl font-bold mb-2">Мобильное приложение</h3>
-                        <p class="text-white text-center mb-4">Кроссплатформенное приложение для iOS и Android</p>
+                        <h3 class="text-white text-xl font-bold mb-2">Сумочки ручной работы</h3>
+                        <p class="text-white text-center mb-4">Уникальные вязаные сумки, созданные с душой для вашего стиля</p>
+                        <button data-modal="modal-project-2" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-xl card-custom-shadow">
+                    <video src="./elit.webm" class="w-full h-64 object-fill transition duration-500 group-hover:scale-110" muted loop autoplay playsinline></video>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Сайт для салона красоты</h3>
+                        <p class="text-white text-center mb-4">Удобный сайт с онлайн-записью для услуг стрижки, маникюра и окрашивания</p>
                         <button data-modal="modal-project-3" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
                     </div>
                 </div>
-        <div class="relative group overflow-hidden rounded-xl card-custom-shadow">
-            <video src="./kri.webm" class="w-full h-64 object-fill transition duration-500 group-hover:scale-110" muted loop autoplay playsinline></video>
-            <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
-                <h3 class="text-white text-xl font-bold mb-2">Сумочки ручной работы</h3>
-                <p class="text-white text-center mb-4">Уникальные вязаные сумки, созданные с душой для вашего стиля</p>
-                <button data-modal="modal-project-2" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
+                <div class="relative group overflow-hidden rounded-xl card-custom-shadow">
+                    <video src="./logo.webm" class="w-full h-64 object-fill transition duration-500 group-hover:scale-110" muted loop autoplay playsinline></video>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Сайт для логопеда-дефектолога</h3>
+                        <p class="text-white text-center mb-4">Сайт для логопеда-дефектолога с онлайн-записью на консультации (в разработке)</p>
+                        <button data-modal="modal-project-4" class="text-white border border-white px-4 py-2 rounded hover:bg-white hover:text-purple-700 transition portfolio-modal-btn">Подробнее</button>
+                    </div>
+                </div>
             </div>
-        </div>
-            </div>
+
             <div class="text-center mt-12">
-                <a href="#" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Смотреть все работы</a>
+                <a href="#" class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300" onclick="showCustomMessage(event)">Смотреть все работы</a>
             </div>
+            <!-- Добавляем div для кастомного сообщения -->
+            <div id="customMessage" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 z-50 pointer-events-none">
+                Все работы уже на сайте, больше пока нет!
+            </div>
+
+            <script>
+                function showCustomMessage(event) {
+                    event.preventDefault(); // Предотвращаем переход по ссылке
+
+                    // Показываем сообщение
+                    const message = document.getElementById('customMessage');
+                    message.classList.remove('opacity-0');
+                    message.classList.add('opacity-100');
+
+                    // Скрываем сообщение через 3 секунды
+                    setTimeout(() => {
+                        message.classList.remove('opacity-100');
+                        message.classList.add('opacity-0');
+                    }, 3000);
+                }
+            </script>
+
+            <style>
+                /* Добавляем стили для кастомного сообщения */
+                #customMessage {
+                    transition: opacity 0.3s ease-in-out;
+                }
+            </style>
         </div>
     </section>
 
@@ -1101,28 +1138,58 @@
     <div id="modal-project-3" class="portfolio-modal">
         <div class="portfolio-modal-content">
             <span class="close-modal">×</span>
-            <h3>Мобильное приложение</h3>
+            <h3>Сайт для салона красоты</h3>
             <div class="carousel">
                 <div class="carousel-images">
-                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1436&q=80" alt="Project 3 Image 1">
-                    <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3 Image 2">
-                    <img src="https://images.unsplash.com/photo-1593642634443-44adaa14823d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3 Image 3">
+                    <img src="./img/salon1.png" alt="Salon Project Image 1">
+                    <img src="./img/salon2.png" alt="Salon Project Image 2">
+                    <img src="./img/salon3.png" alt="Salon Project Image 3">
                 </div>
                 <button class="carousel-btn prev">❮</button>
                 <button class="carousel-btn next">❯</button>
             </div>
-            <p>Разработано кроссплатформенное мобильное приложение для доставки еды, работающее на iOS и Android. Включены функции заказа, отслеживания доставки и push-уведомлений.</p>
+            <p>Разработан сайт для салона красоты, предлагающего услуги стрижки, окрашивания, маникюра, педикюра и свадебных причёсок. Цель — удобная онлайн-запись и привлечение новых клиентов.</p>
             <p><strong>Технологии:</strong></p>
             <ul>
-                <li>React Native</li>
-                <li>Firebase</li>
-                <li>REST API</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Tailwind CSS</li>
+                <li>hCaptcha</li>
             </ul>
-            <p><strong>Срок реализации:</strong> 8 недель</p>
-            <p><strong>Результаты:</strong> Более 10,000 загрузок в первые 3 месяца, высокий рейтинг в магазинах приложений.</p>
-            <p><a href="#" class="text-purple-600 hover:underline">Посмотреть проект</a></p>
+            <p><strong>Срок реализации:</strong> 2 недели</p>
+            <p><strong>Стоимость:</strong> 15000р</p>
+            <p><strong>Результаты:</strong> Увеличение онлайн-записей на 30%, улучшение пользовательского опыта и рост посещаемости сайта.</p>
+            <p><a href="https://artyom995.github.io/Salon/" class="text-purple-600 hover:underline">Посмотреть проект</a></p>
         </div>
     </div>
+
+    <div id="modal-project-4" class="portfolio-modal">
+        <div class="portfolio-modal-content">
+            <span class="close-modal">×</span>
+            <h3>Сайт для логопеда-дефектолога</h3>
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="./img/logo1.png" alt="Logoped Project Image 1">
+                    <img src="./img/logo2.png" alt="Logoped Project Image 2">
+                    <img src="./img/logo3.png" alt="Logoped Project Image 3">
+                </div>
+                <button class="carousel-btn prev">❮</button>
+                <button class="carousel-btn next">❯</button>
+            </div>
+            <p>Разрабатывается сайт для логопеда-дефектолога Кузнецовой Е.И., предлагающий онлайн-запись на консультации и информацию об услугах коррекции речи. Цель — упрощение доступа к профессиональной помощи.</p>
+            <p><strong>Технологии:</strong></p>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Tailwind CSS</li>
+                <li>hCaptcha</li>
+            </ul>
+            <p><strong>Срок реализации:</strong> В процессе (ожидается 2 недели)</p>
+            <p><strong>Стоимость:</strong> Ожидается 15000р</p>
+            <p><strong>Результаты:</strong> Ожидается увеличение числа консультаций на 30% и улучшение взаимодействия с клиентами после запуска.</p>
+            <p><a href="https://artyom995.github.io/defectologist/" class="text-purple-600 hover:underline">Посмотреть проект (в разработке)</a></p>
+        </div>
+
+    </div>
+
 
     <script>
         // Мобильное меню

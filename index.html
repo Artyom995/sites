@@ -447,19 +447,16 @@
     </section>
 
     <!-- Секция нейросотрудника -->
-    <!-- Секция нейросотрудников -->
     <section class="py-12 md:py-20 bg-gray-100" id="ai-team">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12 md:mb-16">
                 <h2 class="text-2xl md:text-4xl font-bold mb-4">Нейросотрудники</h2>
                 <div class="w-16 md:w-20 h-1 bg-purple-600 mx-auto"></div>
             </div>
-
-            <!-- Основное описание -->
             <div class="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20">
                 <div class="space-y-4 md:space-y-6">
-                    <h3 class="text-xl md:text-2xl font-bold text-purple-600">Цифровые сотрудники нового поколения</h3>
-                    <p class="text-sm md:text-base text-gray-600">
+                    <h3 class="text-xl md:text-2xl font-bold text-purple-600 animate-child">Цифровые сотрудники нового поколения</h3>
+                    <p class="text-sm md:text-base text-gray-600 animate-child">
                         Наши нейросотрудники - это AI-ассистенты с глубоким обучением, способные решать комплексные задачи 
                         24/7. Они сочетают в себе мощь нейросетей и бизнес-логики для автоматизации процессов.
                     </p>
@@ -483,7 +480,7 @@
 
                 <!-- Анимированная иконка -->
                 <div class="relative flex items-center justify-center mt-6 md:mt-0">
-                    <div class="ai-loader">
+                    <div class="ai-loader animate-child">
                         <div class="orbit"></div>
                         <div class="orbit delay-1"></div>
                         <div class="orbit delay-2"></div>
@@ -492,71 +489,295 @@
                 </div>
             </div>
 
-            <!-- Таро-Ассистент -->
-            <div class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden mb-8 md:mb-12">
-                <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
-                    <div class="p-4 md:p-8 border-r border-gray-100">
-                        <div class="flex items-start mb-4 md:mb-6">
-                            <div class="ai-avatar">
-                                <div class="tarot-animation">
-                                    <div class="tarot-card"></div>
-                                    <div class="tarot-card"></div>
-                                    <div class="tarot-card"></div>
+            <!-- Выбор нейросотрудника -->
+            <div class="text-center mb-8">
+                <select id="aiSelector" class="border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400" onchange="switchAI(event)">
+                    <option value="design">Дизайн-Ассистент</option>
+                    <option value="tarot">Таро-Ассистент</option>
+                    <option value="hr">HR-Ассистент</option>
+                    <option value="coach">Коуч-Ассистент</option>
+                </select>
+            </div>
+
+            <!-- Контейнер для нейросотрудников -->
+            <div id="aiContainer">
+                <!-- Дизайн-Ассистент (по умолчанию) -->
+                <div id="designAssistant" class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden">
+                    <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
+                        <div class="p-4 md:p-8 border-r border-gray-100">
+                            <div class="flex items-start mb-4 md:mb-6">
+                                <div class="ai-avatar">
+                                    <div class="design-animation">
+                                        <div class="palette"></div>
+                                        <i class="fas fa-paint-brush brush"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4 md:ml-6 flex-1">
+                                    <h3 class="text-lg md:text-xl font-bold mb-2">Дизайн-Ассистент</h3>
+                                    <p class="text-xs md:text-sm text-gray-600">AI для создания креативных концепций</p>
                                 </div>
                             </div>
-                            <div class="ml-4 md:ml-6 flex-1">
-                                <h3 class="text-lg md:text-xl font-bold mb-2">Таро-Ассистент</h3>
-                                <p class="text-xs md:text-sm text-gray-600">AI с обучением на 10,000+ раскладов</p>
+                            <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
+                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
+                                    <div class="bot-message">
+                                        <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Креативный Генератор</div>
+                                        <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
+                                            Готов создавать уникальные дизайны. Опишите вашу концепцию
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <input type="text" 
+                                        class="flex-1 border rounded-lg p-2 text-sm md:text-base focus outline-none focus:ring-2 focus:ring-purple-400"
+                                        placeholder="Опишите ваш дизайн...">
+                                    <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
+                                        Создать
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
-                            <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
-                                <div class="bot-message">
-                                    <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Цифровой Оракул</div>
-                                    <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
-                                        Готов раскрыть тайны вселенной. Задайте вопрос или выберите тип расклада
+
+                        <div class="p-4 md:p-8">
+                            <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6">Возможности Дизайн-Ассистента</h3>
+                            <div class="grid gap-2 md:gap-4">
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-palette text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Генерация стиля</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Автоматический подбор цветовых схем и типографики</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-vector-square text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Векторная графика</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Создание SVG-графики по текстовому описанию</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-magic text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Авто-макетирование</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Адаптивная верстка с учетом трендов дизайна</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex gap-2">
-                                <input type="text" 
-                                    class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
-                                    placeholder="Введите ваш вопрос...">
-                                <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
-                                    Отправить
-                                </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Таро-Ассистент -->
+                <div id="tarotAssistant" class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden hidden">
+                    <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
+                        <div class="p-4 md:p-8 border-r border-gray-100">
+                            <div class="flex items-start mb-4 md:mb-6">
+                                <div class="ai-avatar">
+                                    <div class="tarot-animation">
+                                        <div class="tarot-card"></div>
+                                        <div class="tarot-card"></div>
+                                        <div class="tarot-card"></div>
+                                    </div>
+                                </div>
+                                <div class="ml-4 md:ml-6 flex-1">
+                                    <h3 class="text-lg md:text-xl font-bold mb-2">Таро-Ассистент</h3>
+                                    <p class="text-xs md:text-sm text-gray-600">AI с обучением на 10,000+ раскладов</p>
+                                </div>
+                            </div>
+                            <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
+                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
+                                    <div class="bot-message">
+                                        <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Цифровой Оракул</div>
+                                        <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
+                                            Готов раскрыть тайны вселенной. Задайте вопрос или выберите тип расклада
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <input type="text" 
+                                        class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
+                                        placeholder="Введите ваш вопрос...">
+                                    <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
+                                        Отправить
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 md:p-8">
+                            <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6">Возможности Таро-Ассистента</h3>
+                            <div class="grid gap-2 md:gap-4">
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">78 Арканов</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Полная колода с историческими трактовками и AI-интерпретациями</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-people-arrows"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Паттерны отношений</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Анализ совместимости и прогноз развития отношений</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-dna text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Нейро-интуиция</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Гибридная модель: машинное обучение + эзотерические алгоритмы</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="p-4 md:p-8">
-                        <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6">Возможности Таро-Ассистента</h3>
-                        <div class="grid gap-2 md:gap-4">
-                            <div class="flex items-start">
-                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
-                                    <i class="fas fa-layer-group"></i> <!-- Новая иконка колоды карт -->
+                <!-- HR-Ассистент -->
+                <div id="hrAssistant" class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden hidden">
+                    <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
+                        <div class="p-4 md:p-8 border-r border-gray-100">
+                            <div class="flex items-start mb-4 md:mb-6">
+                                <div class="ai-avatar">
+                                    <div class="hr-animation">
+                                        <i class="fas fa-users"></i>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">78 Арканов</h4>
-                                    <p class="text-xs md:text-sm text-gray-600">Полная колода с историческими трактовками и AI-интерпретациями</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
-                                    <i class="fas fa-people-arrows"></i> <!-- Новая иконка связей -->
-                                </div>
-                                <div>
-                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Паттерны отношений</h4>
-                                    <p class="text-xs md:text-sm text-gray-600">Анализ совместимости и прогноз развития отношений</p>
+                                <div class="ml-4 md:ml-6 flex-1">
+                                    <h3 class="text-lg md:text-xl font-bold mb-2">HR-Ассистент</h3>
+                                    <p class="text-xs md:text-sm text-gray-600">AI для управления персоналом и подбора кадров</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
-                                    <i class="fas fa-dna text-sm md:text-base"></i> <!-- Альтернативная иконка для нейро-интуиции -->
+                            <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
+                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
+                                    <div class="bot-message">
+                                        <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Ваш HR-помощник</div>
+                                        <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
+                                            Готов помочь с подбором сотрудников. Опишите вакансию или загрузите резюме
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Нейро-интуиция</h4>
-                                    <p class="text-xs md:text-sm text-gray-600">Гибридная модель: машинное обучение + эзотерические алгоритмы</p>
+                                <div class="flex gap-2">
+                                    <input type="text" 
+                                        class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
+                                        placeholder="Опишите вакансию...">
+                                    <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
+                                        Найти
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 md:p-8">
+                            <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6">Возможности HR-Ассистента</h3>
+                            <div class="grid gap-2 md:gap-4">
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-file-alt text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Анализ резюме</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Оценка навыков и соответствия кандидатов</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-calendar-check text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Планирование собеседований</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Автоматическое создание расписания и уведомлений</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-users-cog text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">HR-аналитика</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Прогноз текучести кадров и рекомендации</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Коуч-Ассистент -->
+                <div id="coachAssistant" class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden hidden">
+                    <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
+                        <div class="p-4 md:p-8 border-r border-gray-100">
+                            <div class="flex items-start mb-4 md:mb-6">
+                                <div class="ai-avatar">
+                                    <div class="coach-animation">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4 md:ml-6 flex-1">
+                                    <h3 class="text-lg md:text-xl font-bold mb-2">Коуч-Ассистент</h3>
+                                    <p class="text-xs md:text-sm text-gray-600">AI для личностного роста и мотивации</p>
+                                </div>
+                            </div>
+                            <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
+                                <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
+                                    <div class="bot-message">
+                                        <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Ваш личный коуч</div>
+                                        <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
+                                            Давайте достигнем ваших целей! Назови цель или задай вопрос
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <input type="text" 
+                                        class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
+                                        placeholder="Опишите вашу цель...">
+                                    <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
+                                        Начать
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 md:p-8">
+                            <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6">Возможности Коуч-Ассистента</h3>
+                            <div class="grid gap-2 md:gap-4">
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-bullseye text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Постановка целей</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Помощь в формулировке SMART-целей</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-heart text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Мотивация</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Персонализированные советы для поддержания мотивации</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-purple-600 mt-1 mr-3 md:mr-4">
+                                        <i class="fas fa-graduation-cap text-sm md:text-base"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Развитие навыков</h4>
+                                        <p class="text-xs md:text-sm text-gray-600">Упражнения для улучшения коммуникации и лидерства</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -564,77 +785,52 @@
                 </div>
             </div>
 
-            <!-- Дизайн-Ассистент -->
-            <div class="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden">
-                <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
-                    <div class="p-4 md:p-8 border-r border-gray-100">
-                        <div class="flex items-start mb-4 md:mb-6">
-                            <div class="ai-avatar">
-                                <!-- Измененная секция Дизайн-Ассистента -->
-                                <div class="design-animation">
-                                    <div class="palette"></div>
-                                    <i class="fas fa-paint-brush brush"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4 md:ml-6 flex-1">
-                                <h3 class="text-lg md:text-xl font-bold mb-2">Дизайн-Ассистент</h3>
-                                <p class="text-xs md:text-sm text-gray-600">AI для создания креативных концепций</p>
-                            </div>
-                        </div>
-                        <div class="chat-interface bg-gray-50 rounded-lg p-3 md:p-4">
-                            <div class="chat-messages h-32 md:h-48 overflow-y-auto mb-3 md:mb-4">
-                                <div class="bot-message">
-                                    <div class="text-xs md:text-sm text-gray-500 mb-1 md:mb-2">Креативный Генератор</div>
-                                    <div class="bg-white p-2 md:p-3 rounded-lg shadow-sm text-sm md:text-base">
-                                        Готов создавать уникальные дизайны. Опишите вашу концепцию
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex gap-2">
-                                <input type="text" 
-                                    class="flex-1 border rounded-lg p-2 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-purple-400"
-                                    placeholder="Опишите ваш дизайн...">
-                                <button class="bg-purple-600 text-white px-3 md:px-4 py-2 rounded-lg hover:bg-purple-700 transition text-sm md:text-base">
-                                    Создать
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            <script>
+                function switchAI(event) {
+                    const selectedAI = event.target.value;
+                    const designAssistant = document.getElementById('designAssistant');
+                    const tarotAssistant = document.getElementById('tarotAssistant');
+                    const hrAssistant = document.getElementById('hrAssistant');
+                    const coachAssistant = document.getElementById('coachAssistant');
 
-                    <div class="p-4 md:p-8">
-                        <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6">Возможности Дизайн-Ассистента</h3>
-                        <div class="grid gap-2 md:gap-4">
-                            <div class="flex items-start">
-                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
-                                    <i class="fas fa-palette text-sm md:text-base"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Генерация стиля</h4>
-                                    <p class="text-xs md:text-sm text-gray-600">Автоматический подбор цветовых схем и типографики</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
-                                    <i class="fas fa-vector-square text-sm md:text-base"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Векторная графика</h4>
-                                    <p class="text-xs md:text-sm text-gray-600">Создание SVG-графики по текстовому описанию</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="text-purple-600 mt-1 mr-3 md:mr-4">
-                                    <i class="fas fa-magic text-sm md:text-base"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm md:text-base font-semibold mb-1 md:mb-2">Авто-макетирование</h4>
-                                    <p class="text-xs md:text-sm text-gray-600">Адаптивная верстка с учетом трендов дизайна</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    // Проверяем существование элементов
+                    if (!designAssistant || !tarotAssistant || !hrAssistant || !coachAssistant) {
+                        console.error('Один или несколько ассистентов не найдены!');
+                        return;
+                    }
+
+                    // Скрываем все ассистенты
+                    designAssistant.classList.add('hidden');
+                    tarotAssistant.classList.add('hidden');
+                    hrAssistant.classList.add('hidden');
+                    coachAssistant.classList.add('hidden');
+
+                    // Показываем выбранного ассистента
+                    if (selectedAI === 'design') {
+                        designAssistant.classList.remove('hidden');
+                    } else if (selectedAI === 'tarot') {
+                        tarotAssistant.classList.remove('hidden');
+                    } else if (selectedAI === 'hr') {
+                        hrAssistant.classList.remove('hidden');
+                    } else if (selectedAI === 'coach') {
+                        coachAssistant.classList.remove('hidden');
+                    }
+                }
+
+                // Показываем Дизайн-Ассистента по умолчанию при загрузке
+                document.addEventListener('DOMContentLoaded', () => {
+                    const designAssistant = document.getElementById('designAssistant');
+                    if (designAssistant) {
+                        designAssistant.classList.remove('hidden');
+                    }
+                });
+            </script>
+
+            <style>
+                .hidden {
+                    display: none;
+                }
+            </style>
         </div>
     </section>
 
